@@ -57,7 +57,7 @@ resource "aws_codebuild_project" "democodebuild" {
         report_build_status = "true"
     }
 
-    source_version = "codebuild"
+    source_version = "main"
 
     vpc_config {
         vpc_id = var.vpc_id
