@@ -23,7 +23,7 @@ resource "aws_alb_listener" "http_listener" {
 }
 
 resource "aws_security_group" "alb_sg" {
-  name = "alb_sg"
+  name = "testapp-testenv-alb_sg"
   vpc_id = var.vpc_id 
 
   tags = {
@@ -46,14 +46,15 @@ resource "aws_security_group" "alb_sg" {
 }
 
 resource "aws_alb_target_group" "app" {
-  name = "targetGroup"
+  name = "testapp-testenv-app"
   port = 80
   protocol = "HTTP"
   vpc_id = var.vpc_id
   target_type = "ip"
 
   health_check {
-    enabled = true
+    protocol = "HTTP"
+    # enabled = true
     interval = 20
     path = "/"
     timeout = 5

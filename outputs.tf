@@ -1,6 +1,6 @@
-output "oauth" {
-  value = var.github_oauth_token
-}
+# output "oauth" {
+#   value = var.github_oauth_token
+# }
 
 output "repo_url" {
     value = var.repo_url
